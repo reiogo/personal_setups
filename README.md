@@ -1,2 +1,2 @@
-# cpp_testing_template
-Testing set up and template for cpp
+# personal_setup
+Repo for keeping miscellaneous setups and configurations for developing.
