@@ -14,18 +14,6 @@ cat <<EOF >>$filename.cc
 #include <iostream>
 using namespace std;
 
-
-void solve(){
-}
-// ==================================================
-
-#ifdef LOCAL_TESTING
-
-#define DOCTEST_CONFIG_IMPLEMENT
-#include "doctest.h"
-#define tc TEST_CASE
-#define check CHECK
-
 // make the testing framework print out vector values
 template <typename T>
 ostream& operator<<(ostream& os, const vector<T>& v) {
@@ -37,6 +25,17 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
     os << "}";
     return os;
 }
+
+
+// ==================================================
+
+#ifdef LOCAL_TESTING
+
+#define DOCTEST_CONFIG_IMPLEMENT
+#include "doctest.h"
+#define tc TEST_CASE
+#define check CHECK
+
 
 tc("stub test"){
     check(true);
@@ -53,7 +52,6 @@ int main(){
 // ==================================================
 
 int main() {
-    solve();
     return 0;
 }
 
