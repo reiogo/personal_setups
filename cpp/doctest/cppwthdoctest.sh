@@ -14,17 +14,6 @@ cat <<EOF >>$filename.cc
 #include <iostream>
 using namespace std;
 
-// make the testing framework print out vector values
-template <typename T>
-ostream& operator<<(ostream& os, const vector<T>& v) {
-    os << "{";
-    for (size_t i = 0; i < v.size(); ++i) {
-        os << v[i];
-        if (i + 1 < v.size()) os << ", ";
-    }
-    os << "}";
-    return os;
-}
 
 void solve(){
 }
@@ -36,6 +25,18 @@ void solve(){
 #include "doctest.h"
 #define tc TEST_CASE
 #define check CHECK
+
+// make the testing framework print out vector values
+template <typename T>
+ostream& operator<<(ostream& os, const vector<T>& v) {
+    os << "{";
+    for (size_t i = 0; i < v.size(); ++i) {
+        os << v[i];
+        if (i + 1 < v.size()) os << ", ";
+    }
+    os << "}";
+    return os;
+}
 
 tc("stub test"){
     check(true);
